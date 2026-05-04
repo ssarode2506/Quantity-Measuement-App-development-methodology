@@ -30,4 +30,8 @@ public class Length {
     public int hashCode() {
         return Double.hashCode(toBase());
     }
+
+    public double convertToInches() {
+        return 0;
+    }
 }
