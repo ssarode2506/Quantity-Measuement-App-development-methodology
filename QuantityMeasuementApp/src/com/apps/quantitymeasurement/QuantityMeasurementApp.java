@@ -1,16 +1,33 @@
 package com.apps.quantitymeasurement;
 
-public class QuantityMeasurementApp {
+class QantityMeasurementApp {
 
-    public static void main(String[] args) {
+    private double value;
+    private LengthUnit unit;
 
-        QuantityWeight w1 = new QuantityWeight(1.0, WeightUnit.KILOGRAM);
-        QuantityWeight w2 = new QuantityWeight(1000.0, WeightUnit.GRAM);
+    public void Length(double value, LengthUnit unit) {
+        this.value = value;
+        this.unit = unit;
+    }
 
-        System.out.println(w1.equals(w2));
+    private double toBase() {
+        return value * unit.getFactor();
+    }
 
-        System.out.println(w1.convertTo(WeightUnit.POUND));
+    @Override
+    public boolean equals(Object obj) {
 
-        System.out.println(QuantityWeight.add(w1, w2, WeightUnit.KILOGRAM));
+        if (this == obj) return true;
+
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Length other = (Length) obj;
+
+        return Double.compare(this.toBase(), other.toBase()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Double.hashCode(toBase());
     }
 }
