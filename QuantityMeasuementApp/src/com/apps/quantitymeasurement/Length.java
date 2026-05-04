@@ -34,4 +34,18 @@ public class Length {
     public double convertToInches() {
         return 0;
     }
+
+    public double toInches() {
+        return 0;
+    }
+
+    public Length subtract(Length l2) {
+
+        return l2;
+    }
+
+    public double divide(Length l2) {
+
+        return 0;
+    }
 }
