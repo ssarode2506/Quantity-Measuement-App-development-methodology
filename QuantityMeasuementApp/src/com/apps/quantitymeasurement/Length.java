@@ -48,4 +48,9 @@ public class Length {
 
         return 0;
     }
+
+    public Object add(Length length) {
+
+        return null;
+    }
 }
